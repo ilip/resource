@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>背影直播源</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        #zubo-content, #hotel-content {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        #zubo-content h2, #hotel-content h2 {
+            margin-top: 20px;
+        }
+        #zubo-content span, #hotel-content span {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>背影专用</h1>
+
+    <h2>直播源 - zubo</h2>
+    <div id="zubo-content"></div>
+
+    <h2>直播源 - hotel</h2>
+    <div id="hotel-content"></div>
+
+    <script>
+        function loadContent(url, elementId) {
+            fetch(url)
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById(elementId).innerHTML = data;
+                })
+                .catch(error => console.error('Error loading content:', error));
+        }
+
+        loadContent('iptv/zubo.html', 'zubo-content');
+        loadContent('iptv/hotel.html', 'hotel-content');
+    </script>
+</body>
+</html>

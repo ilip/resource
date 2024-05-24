@@ -1,0 +1,8 @@
+[submodule "tvbox/liubox"]
+	path = tvbox/liubox
+	url = https://github.com/liu673cn/box
+	branch = main
+[submodule "tvbox/hacc"]
+	path = tvbox/hacc
+	url = https://github.com/ilip/tvbox-hacc
+	branch = main
